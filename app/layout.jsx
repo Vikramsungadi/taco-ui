@@ -5,15 +5,16 @@ import { Inter } from "next/font/google";
 import { CodeProvider } from "@/context/code-context";
 import Footer from "./sections/Footer";
 import ThemeDetector from "@/lib/ThemeDetector";
+import { SITE_URL } from "@/utils/URL";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "Taco - Component Library",
 	description: "tailwindcss components to buid websites rapidly.",
 	openGraph: {
-		title: "taco",
+		title: "Taco - Component Library",
 		description: "Rapidly build websites with pre-built components",
-		url: "/",
+		url: SITE_URL,
 		siteName: "taco",
 		type: "website",
 	},

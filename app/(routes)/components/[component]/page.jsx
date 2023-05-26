@@ -2,6 +2,7 @@ import CodeComponent from "@/components/code/code-component/CodeComponent";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import fetchCategories from "@/lib/fetchCategories";
 import { fetchComponentsByFilter } from "@/lib/fetchComponent";
+import { SITE_URL } from "@/utils/URL";
 import { CapsWord, capitalize, unSlugify } from "@/utils/helpers";
 
 export async function generateMetadata({ params }) {
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }) {
 		openGraph: {
 			title: `${component} Components  - Taco Component Library`,
 			description: `Beautiful and Responsive ${component} components.`,
-			url: `/components/${params.component}`,
+			url: `${SITE_URL}/components/${params.component}`,
 			siteName: "taco",
 		},
 	};
@@ -35,7 +36,7 @@ const Page = async ({ params, ...props }) => {
 	// ));
 
 	return (
-		<>
+		<main>
 			<nav className='mb-6 mt-12 p-2 ' role='navigation' aria-label='breadcrumbs'>
 				<Breadcrumbs
 					Links={[
@@ -58,7 +59,7 @@ const Page = async ({ params, ...props }) => {
 				{NavLinks ?? ""}
 			</nav> */}
 			</section>
-		</>
+		</main>
 	);
 };
 

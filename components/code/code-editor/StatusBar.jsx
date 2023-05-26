@@ -1,7 +1,7 @@
 "use client";
 import srcCodeContext from "@/context/code-context";
 import fetchCategories from "@/lib/fetchCategories";
-import { baseUrl } from "@/utils/baseurl";
+import { API_URL, SITE_URL } from "@/utils/URL";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
@@ -15,7 +15,7 @@ export default function StatusBar({ handleFocus, isFocused: { html, css, javascr
 	// HANDLERS
 	async function addComponent() {
 		props.setAddingComponent(true);
-		await axios.post(`${baseUrl}component`, {
+		await axios.post(`${API_URL}component`, {
 			...code,
 		});
 		console.log("Added Successfully");
@@ -25,7 +25,7 @@ export default function StatusBar({ handleFocus, isFocused: { html, css, javascr
 	}
 	async function updateComponent() {
 		props.setAddingComponent(true);
-		await axios.patch(`${baseUrl}component/${props.id}`, {
+		await axios.patch(`${API_URL}component/${props.id}`, {
 			...code,
 			// id: props.id,
 		});

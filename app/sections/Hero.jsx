@@ -18,7 +18,7 @@ const Hero = () => {
 		</span>
 	);
 	return (
-		<div
+		<section
 			style={hueAnimVars}
 			className='relative z-10 flex animate-filter-color flex-col items-center justify-center gap-6 text-center   max-md:py-14 md:py-16 lg:py-[5.25rem]'>
 			<h1 className='z-10 mx-4 max-w-3xl text-[4rem]/[4rem]  font-bold max-md:text-5xl' style={{ textWrap: "balance" }}>
@@ -72,7 +72,7 @@ const Hero = () => {
 						<BsSearch className='text-lg text-gray-400' />
 					</SearchBar> */}
 			</div>
-		</div>
+		</section>
 	);
 };
 

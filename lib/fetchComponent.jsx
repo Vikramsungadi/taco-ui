@@ -1,8 +1,8 @@
-import { baseUrl } from "@/utils/baseurl";
+import { API_URL, SITE_URL } from "@/utils/URL";
 import axios from "axios";
 
 export async function fetchComponent(id) {
-	const data = await axios.get(`${baseUrl}/component/${id}`);
+	const data = await axios.get(`${API_URL}/component/${id}`);
 	return data.data[0];
 }
 export async function fetchComponentsByFilter(queryObj) {
@@ -12,17 +12,17 @@ export async function fetchComponentsByFilter(queryObj) {
 	});
 	queryString = queryString.substring(1);
 
-	const data = await axios.get(`${baseUrl}/component/?${queryString}`);
+	const data = await axios.get(`${API_URL}/component/?${queryString}`);
 	return data.data;
 }
 
 export async function fetchAllComponents() {
-	const data = await axios.get(`${baseUrl}/component/`);
+	const data = await axios.get(`${API_URL}/component/`);
 
 	return data.data;
 }
 
 export async function fetchFilteredComponents() {
-	const data = await axios.get(`${baseUrl}/component/`);
+	const data = await axios.get(`${API_URL}/component/`);
 	return data.data;
 }

@@ -26,7 +26,7 @@ import logoclouds from "@/public/Banners-SVG/banner-logoclouds.svg";
 import Link from "next/link";
 import fetchCategories from "@/lib/fetchCategories";
 import { capitalize, unSlugify } from "@/utils/helpers";
-import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { SITE_URL } from "@/utils/URL";
 
 export const metadata = {
 	title: "50+ Components: Taco Component Library",
@@ -34,8 +34,9 @@ export const metadata = {
 	openGraph: {
 		title: "Component Categories - Taco Component Library",
 		description: "Beautiful and Responsive ui components in categories.",
-		url: "/components",
+		url: `${SITE_URL}/components`,
 		siteName: "taco",
+		type: "website",
 	},
 };
 
@@ -71,8 +72,8 @@ const Page = async () => {
 
 	return (
 		<>
-			<section className='mx-auto mt-10 grid scroll-smooth px-3 max-lg:mx-auto max-lg:grid-cols-1 max-sm:px-0 lg:grid-cols-[1fr_auto]'>
-				<div className='my-3 grid grid-cols-[repeat(auto-fit,minmax(0,18rem))] items-center justify-center gap-6 p-3 max-lg:grid-cols-[repeat(auto-fit,minmax(15rem,0.9fr))]'>
+			<main className='mx-auto mt-10 grid scroll-smooth px-3 max-lg:mx-auto max-lg:grid-cols-1 max-sm:px-0 lg:grid-cols-[1fr_auto]'>
+				<section className='my-3 grid grid-cols-[repeat(auto-fit,minmax(0,18rem))] items-center justify-center gap-6 p-3 max-lg:grid-cols-[repeat(auto-fit,minmax(15rem,0.9fr))]'>
 					{categories &&
 						categories.map(({ _id, name }, index) => (
 							<Link key={_id} href={`/components/${name.toLowerCase()}`}>
@@ -92,14 +93,14 @@ const Page = async () => {
 								</div>
 							</Link>
 						))}
-				</div>
+				</section>
 				<nav
 					aria-label='Component category navigation links'
 					role='navigation'
 					className='scrollbar-thin sticky top-0 m-4 flex h-fit max-h-[calc(100vh-(72.8px+48px))] flex-col overflow-y-auto  rounded-md px-2 py-2 text-[0.6rem]  max-lg:hidden'>
 					{NavLinks ?? ""}
 				</nav>
-			</section>
+			</main>
 		</>
 	);
 };
