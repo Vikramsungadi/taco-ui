@@ -1,0 +1,30 @@
+{
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"editor.guides.bracketPairs": true,
+	"editor.formatOnType": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"package.json": false,
+		"components/experiment": false,
+		".next": true,
+		"context": true,
+		"node_modules": true,
+		".prettierrc": true,
+		"data.js": true,
+		"jsconfig.json": true,
+		"postcss.config.js": false,
+		"README.md": true,
+		"package-lock.json": true,
+		".gitignore": false,
+		".eslintrc.json": true
+	},
+	"hide-files.files": [],
+	"explorerExclude.backup": {}
+}

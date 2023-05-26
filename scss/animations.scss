@@ -1,0 +1,13 @@
+@keyframes slideRight {
+	0% {
+		transform: translate(0, -1rem);
+		// filter: hue-rotate(0deg), blur(2deg);
+		opacity: 0.3;
+	}
+	100% {
+		// filter: hue-rotate(60deg), blur(8deg);
+		opacity: 0.1;
+		// top: 1.5rem;
+		transform: translate(12rem, 3rem);
+	}
+}
