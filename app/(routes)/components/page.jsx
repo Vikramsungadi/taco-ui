@@ -30,13 +30,19 @@ import { SITE_URL } from "@/utils/URL";
 
 export const metadata = {
 	title: "50+ Components: Taco Component Library",
-	description: "20+ component categories and 50+ tailwind components",
+	description: "20+ categories and 50+ components",
 	openGraph: {
-		title: "Component Categories - Taco Component Library",
-		description: "Beautiful and Responsive ui components in categories.",
+		title: "Taco - Components",
+		description: "Beautiful and Responsive UI components in categories.",
 		url: `${SITE_URL}/components`,
 		siteName: "taco",
 		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Taco - Components",
+		description: "Beautiful and Responsive UI components in categories.",
+		creator: "@sungadivikram1",
 	},
 };
 

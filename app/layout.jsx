@@ -10,13 +10,19 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "Taco - Component Library",
-	description: "tailwindcss components to buid websites rapidly.",
+	description: "Tailwind component library to build websites rapidly",
 	openGraph: {
-		title: "Taco - Component Library",
-		description: "Rapidly build websites with pre-built components",
+		title: "Taco",
+		description: "Tailwind component library to build websites rapidly",
 		url: SITE_URL,
 		siteName: "taco",
 		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Taco",
+		description: "Tailwind component library to build websites rapidly",
+		creator: "@sungadivikram1",
 	},
 };
 

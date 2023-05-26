@@ -11,12 +11,18 @@ export async function generateMetadata({ params }) {
 	let component = lastChar === "s" ? CapsWord(params.component.substring(0, lastIndex)) : CapsWord(params.component);
 	return {
 		title: `${component} Components: Taco Component Library`,
-		description: `Beautiful ${component} components made with tailwind css and supports dark mode`,
+		description: `Responsive ${component} components made with tailwind css and supports dark mode`,
 		openGraph: {
 			title: `${component} Components  - Taco Component Library`,
 			description: `Beautiful and Responsive ${component} components.`,
 			url: `${SITE_URL}/components/${params.component}`,
 			siteName: "taco",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `${component} Components`,
+			description: `Beautiful and Responsive ${component} components.`,
+			creator: "@sungadivikram1",
 		},
 	};
 }
