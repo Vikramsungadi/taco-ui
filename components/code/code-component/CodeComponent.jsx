@@ -67,7 +67,7 @@ const CodeComponent = (props) => {
 			{/* max-w-[75rem] */}
 			<div className={`mx-auto flex w-full flex-col  ${props.className ?? ""} `}>
 				<ActionBar
-					className={`${show.code && "sticky py-4 "}  top-0 z-[9999999999]`}
+					className={`${show.code && "sticky"}  top-0 z-[9999999999]`}
 					screens={screens}
 					actions={{ show, codeDisplay, copied }}
 					handlers={{ handleCopy, handleScreen, handleShow, handleShowCode }}

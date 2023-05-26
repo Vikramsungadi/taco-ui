@@ -13,7 +13,7 @@ const Hero = () => {
 	const Span = ({ children, delay, className }) => (
 		<span
 			style={{ "--delay": `${delay ?? ""}s` }}
-			className={`animate-opacity ${fira.className} font-medium text-sky-700 dark:text-sky-500  ${className ?? ""}`}>
+			className={`animate-opacity ${fira.className}  text-sky-700 dark:text-sky-500  ${className ?? ""}`}>
 			{children}
 		</span>
 	);
@@ -32,7 +32,7 @@ const Hero = () => {
 			</h1>
 
 			<p className='mx-8 text-center text-lg  opacity-80  max-md:text-base max-sm:text-[0.9rem]'>
-				A library packed with components like
+				A library packed with <Span className='!text-fuchsia-600 dark:!text-fuchsia-400'>tailwind components</Span> like
 				<Span delay='0.5'>
 					<Link className='focus-visible:ring-sky-700 dark:focus-visible:ring-sky-500' href='/components/buttons'>
 						&nbsp;buttons
@@ -62,11 +62,11 @@ const Hero = () => {
 						much more&nbsp;
 					</Link>
 				</Span>
-				to build modern websites quickly with modern designs
+				to build visually stunning websites quickly.
 			</p>
 			<div className=' explore z-0 mx-4 flex flex-wrap justify-center gap-8 py-4'>
 				<Link className='btn  max-sm:my-3' href={"/components"}>
-					Components
+					View Components
 				</Link>
 				{/* <SearchBar placeholder='Search for components '>
 						<BsSearch className='text-lg text-gray-400' />

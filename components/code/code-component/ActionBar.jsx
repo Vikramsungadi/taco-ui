@@ -12,7 +12,7 @@ const ActionBar = (props) => {
 	const { handleCopy, handleScreen, handleShow, handleShowCode } = props.handlers;
 
 	return (
-		<div className={`flex justify-center px-4 py-2 text-black ${props.className ?? ""}`}>
+		<div className={`flex justify-center p-4 text-black ${props.className ?? ""}`}>
 			<div className={`block ${!show.code && "hidden"} screens mr-auto flex gap-4`}>
 				<Icon
 					data='html'

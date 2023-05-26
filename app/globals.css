@@ -110,7 +110,8 @@ body {
 	
 	dark:before:bg-gradient-to-bl  dark:before:from-neutral-700  dark:before:via-neutral-400/90   dark:before:to-neutral-900 dark:before:opacity-20 dark:before:blur-none 
 	
-	dark:hover:before:opacity-100  dark:hover:before:shadow-[0_0_15px_#111] max-sm:mx-2;
+	dark:hover:before:opacity-100  dark:hover:before:shadow-[0_0_15px_#111] 
+	max-sm:mx-4;
 	}
 
 	.scrollbar-hide::-webkit-scrollbar {

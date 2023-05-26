@@ -36,7 +36,7 @@ const Showcase = () => {
 	};
 
 	return (
-		<section className='mx-4 flex min-h-screen max-w-screen-lg flex-col items-center justify-center  lg:mx-auto'>
+		<section className='mx-4 flex max-w-screen-lg flex-col items-center justify-center max-sm:max-h-[90vh] sm:mt-20  lg:mx-auto'>
 			<h2 className='group/title  relative mx-auto mb-6 mt-12 w-fit  text-center font-sans text-6xl font-bold  selection:bg-sky-400/80 selection:text-sky-950 dark:selection:bg-zinc-200 dark:selection:text-zinc-950 max-sm:my-12'>
 				<span className='clip zinc-grad3 relative group-hover/title:z-10'>Quick Peek</span>
 				<span className='clip color-grad1 absolute  left-[25%]  top-0 -translate-x-[40%] text-[7rem]  font-bold opacity-0 transition-opacity duration-500 group-hover/title:opacity-[0.25]'>
