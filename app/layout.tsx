@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 
 import "../scss/index.scss";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: Props) {
 						{children}
 						<Footer />
 					</ThemeProvider>
+					<Analytics />
 				</body>
 			</html>
 		</CodeProvider>
