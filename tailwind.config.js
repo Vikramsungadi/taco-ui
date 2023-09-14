@@ -1,4 +1,4 @@
-const { Frames, Animations } = require("./utils/animations");
+const { Frames, Animations, Animations2 } = require("./utils/animations");
 
 /** @type {import('tailwindcss').Config} */
 
@@ -16,6 +16,7 @@ module.exports = {
 			},
 			animation: {
 				...Animations,
+				...Animations2
 			},
 			colors: {
 				primary: "#0f172a",

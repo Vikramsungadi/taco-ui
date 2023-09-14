@@ -1,0 +1,23 @@
+// Exporting all variables from the module
+export { default as alerts } from "@/public/Banners-SVG/banner-alerts.svg";
+export { default as avatars } from "@/public/Banners-SVG/banner-avatars.svg";
+export { default as breadcrumbs } from "@/public/Banners-SVG/banner-breadcrumbs.svg";
+export { default as searchbars } from "@/public/Banners-SVG/banner-searchbar.svg";
+export { default as buttons } from "@/public/Banners-SVG/banner-buttons.svg";
+export { default as cards } from "@/public/Banners-SVG/banner-card.svg";
+export { default as footers } from "@/public/Banners-SVG/banner-footer.svg";
+export { default as input } from "@/public/Banners-SVG/banner-input.svg";
+export { default as navbar } from "@/public/Banners-SVG/banner-navbar.svg";
+export { default as pricing } from "@/public/Banners-SVG/banner-pricing.svg";
+export { default as sidebar } from "@/public/Banners-SVG/banner-sidebar.svg";
+export { default as signup } from "@/public/Banners-SVG/banner-signin.svg";
+export { default as signin } from "@/public/Banners-SVG/banner-signup.svg";
+export { default as banner404 } from "@/public/Banners-SVG/banner-404.svg";
+export { default as faq } from "@/public/Banners-SVG/banner-faq.svg";
+export { default as Features } from "@/public/Banners-SVG/banner-Features.svg";
+export { default as Gridlayout } from "@/public/Banners-SVG/banner-Gridlayout.svg";
+export { default as newsletter } from "@/public/Banners-SVG/banner-Newsletter.svg";
+export { default as testimonials } from "@/public/Banners-SVG/banner-Testimonial.svg";
+export { default as toggle } from "@/public/Banners-SVG/banner-toggle.svg";
+export { default as hero } from "@/public/Banners-SVG/banner-hero.svg";
+export { default as logoclouds } from "@/public/Banners-SVG/banner-logoclouds.svg";

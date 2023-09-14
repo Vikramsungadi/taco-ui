@@ -18,6 +18,15 @@
 		@apply absolute inset-0 z-0 h-[400%] w-[17%] origin-center bg-zinc-100/40 blur-lg dark:bg-zinc-600;
 		transition: all 0.5s ease-out;
 	}
+	@media (max-width: 640px) {
+		.btn {
+			@apply border-sky-200 dark:border-zinc-400;
+		}
+		.btn::before {
+			animation: slideRight 1.5s ease-out infinite 1s;
+			animation-play-state: running;
+		}
+	}
 	.btn:hover::before {
 		@apply border-sky-50/50 dark:border-zinc-700;
 		animation-play-state: running;
