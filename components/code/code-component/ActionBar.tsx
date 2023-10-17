@@ -6,35 +6,35 @@ import { HiOutlineDeviceMobile } from "react-icons/hi";
 import { HiCodeBracket } from "react-icons/hi2";
 import { MdContentCopy, MdOutlineTabletMac } from "react-icons/md";
 import { CodeDisplayProps, languages } from "@/types/types";
-type Screens =  {
-	mobile:boolean;
-	tab:boolean;
-	desktop:boolean;
-}
+import cn from "@/utils/cn";
+type Screens = {
+	mobile: boolean;
+	tab: boolean;
+	desktop: boolean;
+};
 type Actions = {
-	 show:{code: boolean;
-	 preview: boolean};
-	 codeDisplay:Record<languages,boolean>
-	 copied:boolean;
+	show: { code: boolean; preview: boolean };
+	codeDisplay: Record<languages, boolean>;
+	copied: boolean;
+};
+
+interface Props {
+	screens: Screens;
+	actions: Actions;
+	className?: string;
+	handlers: any;
+	react?: any;
+	javascript?: any;
 }
 
-interface Props  {
-	screens:Screens;
-actions:Actions;
-className?:string;
-handlers:any
-react?:any;
-javascript?:any
-}
-
-const ActionBar = (props:Props) => {
+const ActionBar = (props: Props) => {
 	const { mobile, tab, desktop } = props.screens;
 	const { show, codeDisplay, copied } = props.actions;
 	const { handleCopy, handleScreen, handleShow, handleShowCode } = props.handlers;
 
 	return (
-		<div className={`flex justify-center p-4 text-black ${props.className ?? ""}`}>
-			<div className={`block ${!show.code && "hidden"} screens mr-auto flex gap-4`}>
+		<div className={cn("flex justify-center p-4 text-black", props.className)}>
+			<div className={cn("screens mr-auto flex gap-4", !show.code && "hidden")}>
 				<Icon
 					data='html'
 					isActive={codeDisplay.html}
@@ -65,7 +65,7 @@ const ActionBar = (props:Props) => {
 				)}
 			</div>
 
-			<div className={`block ${show.code && "hidden"} screens ml-auto flex gap-4`}>
+			<div className={cn("screens ml-auto flex gap-4", show.code && "hidden")}>
 				<Icon isActive={mobile} data='mobile' onClick={handleScreen} className='max-sm:hidden'>
 					<HiOutlineDeviceMobile className='icon text-base' />
 				</Icon>
@@ -83,11 +83,12 @@ const ActionBar = (props:Props) => {
 				<Icon
 					onClick={handleCopy}
 					data={!copied ? "copy" : "copied"}
-					className={`group ${
-						copied && "!bg-emerald-100/80 !text-emerald-500 dark:!bg-emerald-800/60 "
-					} hover:!bg-emerald-100/50 hover:!text-emerald-500 active:text-emerald-500 dark:text-emerald-100 dark:hover:!bg-emerald-800/60`}>
-					{!copied && <MdContentCopy className='icon  group-active:text-emerald-500 ' />}
-					{copied && <FaCheck className='icon  text-sm group-active:text-emerald-500' />}
+					className={cn(
+						"group hover:!bg-emerald-100/50 hover:!text-emerald-500 active:text-emerald-500 dark:text-emerald-100 dark:hover:!bg-emerald-800/60",
+						copied && "!bg-emerald-100/80 !text-emerald-500 dark:!bg-emerald-800/60",
+					)}>
+					{!copied && <MdContentCopy className='icon group-active:text-emerald-500 ' />}
+					{copied && <FaCheck className='icon text-sm group-active:text-emerald-500' />}
 				</Icon>
 				<Icon onClick={handleShow} isActive={show.code} data='code'>
 					<HiCodeBracket className='icon' />

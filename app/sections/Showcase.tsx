@@ -11,7 +11,7 @@ import AvatarCurved from "../comps/AvatarCurved";
 import CardBgHover from "../comps/CardBgHover";
 import cn from "@/utils/cn";
 
-type ShowCaseComponents = "Buttons" | "Alerts" | "Input" | "Avatars" | "Card";
+export type ShowCaseComponents = "Buttons" | "Alerts" | "Input" | "Avatars" | "Card";
 
 const Showcase = () => {
 	let [display, setDisplay] = useState<Record<ShowCaseComponents, boolean>>({

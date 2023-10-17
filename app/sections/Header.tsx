@@ -28,4 +28,3 @@ const Nav = () => {
 };
 
 export default Nav;
-// before:md:animate-trans

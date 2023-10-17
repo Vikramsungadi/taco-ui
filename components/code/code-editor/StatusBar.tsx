@@ -4,6 +4,7 @@ import fetchCategories from "@/lib/fetchCategories";
 import { CategoryResponse } from "@/types/apiTypes";
 import { languages } from "@/types/types";
 import { API_URL } from "@/utils/URL";
+import cn from "@/utils/cn";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
@@ -60,7 +61,7 @@ export default function StatusBar({
 		<button
 			onClick={onClick}
 			data-lang={lang}
-			className={` ${className} bg-black px-6 py-3 text-xs text-white outline-none transition-colors`}>
+			className={cn("bg-black px-6 py-3 text-xs text-white outline-none transition-colors", className)}>
 			{children}
 		</button>
 	);
@@ -74,16 +75,16 @@ export default function StatusBar({
 
 	return (
 		<div className='flex'>
-			<Button className={` ${html && " !bg-red-400"}`} lang='html'>
+			<Button className={cn(html && " !bg-red-400")} lang='html'>
 				HTML
 			</Button>
-			<Button className={` ${css && "!bg-blue-500 "}`} lang='css'>
+			<Button className={cn(css && "!bg-blue-500 ")} lang='css'>
 				CSS
 			</Button>
-			<Button className={` ${javascript && "!bg-amber-400 text-gray-100 "}`} lang='javascript'>
+			<Button className={cn(javascript && "!bg-amber-400 text-gray-100 ")} lang='javascript'>
 				JAVASCRIPT
 			</Button>
-			<Button className={` ${react && "!bg-sky-400 text-gray-100 "}`} lang='react'>
+			<Button className={cn(react && "!bg-sky-400 text-gray-100 ")} lang='react'>
 				REACT
 			</Button>
 			{props.edit ? (
@@ -104,7 +105,7 @@ export default function StatusBar({
 				}}
 			/>
 			<select
-				value={`${code.category}`}
+				value={code.category}
 				onChange={(e) => {
 					setCode("category", e.target.value);
 				}}

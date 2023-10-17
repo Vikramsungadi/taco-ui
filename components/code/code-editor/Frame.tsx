@@ -1,4 +1,5 @@
 import { CodeDisplayProps } from "@/types/types";
+import cn from "@/utils/cn";
 import { forwardRef, ForwardedRef, CSSProperties } from "react";
 
 export type AlignmentProps = "row" | "rowStart" | "rowEnd" | "column" | "colStart" | "colEnd";
@@ -80,12 +81,8 @@ ${javascript ?? ""}
 </script>`;
 
 	return (
-		<div style={{ ...style }} className={` h-full w-full ${className ?? ""} relative z-50`}>
-			<iframe
-				className={`absolute h-full w-full`}
-				// ref={ref}
-				srcDoc={doc}></iframe>
-			;
+		<div style={{ ...style }} className={cn("relative z-50 h-full w-full", className)}>
+			<iframe className='absolute h-full w-full' ref={ref} srcDoc={doc}></iframe>;
 		</div>
 	);
 });

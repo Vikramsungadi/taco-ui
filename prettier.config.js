@@ -5,5 +5,6 @@ module.exports = {
 	jsxSingleQuote: true,
 	tabWidth: 2,
 	plugins: ["prettier-plugin-tailwindcss"],
+
 	tailwindFunctions: ["cn"],
 };

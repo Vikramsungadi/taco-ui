@@ -1,6 +1,6 @@
-import ThemeButton from "@/utils/ThemeButton";
 import React from "react";
 import { BsSun, BsMoonFill, BsFillEyeFill } from "react-icons/bs";
+import ThemeButton from "@/utils/ThemeButton";
 import { IoIosResize } from "react-icons/io";
 import { MdOutlineCopyAll, MdTimer } from "react-icons/md";
 import { GiSettingsKnobs } from "react-icons/gi";
@@ -12,8 +12,14 @@ const Features = () => {
 			description: (
 				<p className='pr-4 text-sm/6 text-neutral-950 opacity-70 transition-opacity group-hover:opacity-100 dark:text-neutral-200'>
 					Easily adopts to dark mode according to user settings or you can set manually. Checkout&nbsp;
-					{/* prettier-ignore */}
-					<span> <a href='https://tailwindcss.com/docs/dark-mode' target='_blank' className='group-hover:underline'> tailwind docs </a> </span>
+					<span>
+						<a
+							href='https://tailwindcss.com/docs/dark-mode'
+							target='_blank'
+							className='group-hover:underline'>
+							tailwind docs
+						</a>
+					</span>
 					&nbsp;for more info.
 				</p>
 			),
@@ -31,13 +37,15 @@ const Features = () => {
 		},
 		{
 			title: "Time Saving",
-			description: "By using pre-built components, you can save time and effort in building and styling components from scratch.",
+			description:
+				"By using pre-built components, you can save time and effort in building and styling components from scratch.",
 			icon: <MdTimer />,
 		},
 		{
 			title: "Live Preview",
 			icon: <BsFillEyeFill />,
-			description: "Preview components in different screen sizes and toggle theme to view how it looks in dark mode.",
+			description:
+				"Preview components in different screen sizes and toggle theme to view how it looks in dark mode.",
 		},
 		{
 			title: "Easy Customization",

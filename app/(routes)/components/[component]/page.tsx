@@ -5,10 +5,11 @@ import { fetchComponentsByFilter } from "@/lib/fetchComponent";
 import { SITE_URL } from "@/utils/URL";
 import { CapsWord, capitalize, unSlugify } from "@/utils/helpers";
 
-export async function generateMetadata({ params }:{params:Params}) {
+export async function generateMetadata({ params }: { params: Params }) {
 	let lastIndex = params.component.length - 1;
 	let lastChar = params.component.charAt(lastIndex);
-	let component = lastChar === "s" ? CapsWord(params.component.substring(0, lastIndex)) : CapsWord(params.component);
+	let component =
+		lastChar === "s" ? CapsWord(params.component.substring(0, lastIndex)) : CapsWord(params.component);
 	return {
 		title: `${component} Components: Taco Component Library`,
 		description: `Responsive ${component} components made with tailwind css and supports dark mode`,
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }:{params:Params}) {
 		},
 	};
 }
-const Page = async ({ params, ...props }:{params:Params}) => {
+const Page = async ({ params, ...props }: { params: Params }) => {
 	const filteredData = await fetchComponentsByFilter({ category: params.component });
 
 	if (filteredData.length === 0) throw new Error("No data found.");
@@ -54,9 +55,12 @@ const Page = async ({ params, ...props }:{params:Params}) => {
 			</nav>
 			<section className='mx-auto grid  scroll-smooth px-3 max-lg:mx-auto max-lg:grid-cols-1 max-sm:px-0 lg:grid-cols-[1fr_auto]'>
 				<div className='component mx-auto flex w-full  flex-col gap-14 !scroll-smooth  transition-all '>
-					{filteredData.map((props:any) => (
-						<div className='my-2 first-of-type:pt-2  max-lg:px-2' id={props.name.toLowerCase()} key={props._id}>
-							<label className='w-fit  text-base font-medium '>{props.name}</label>
+					{filteredData.map((props: any) => (
+						<div
+							className='my-2 first-of-type:pt-2  max-lg:px-2'
+							id={props.name.toLowerCase()}
+							key={props._id}>
+							<label className='w-fit text-base font-medium '>{props.name}</label>
 							<CodeComponent {...props} />
 						</div>
 					))}
@@ -72,7 +76,7 @@ const Page = async ({ params, ...props }:{params:Params}) => {
 export default Page;
 export async function generateStaticParams() {
 	const data = await fetchCategories();
-	return data.map(({ name }: { name: string }):Params  => ({ component: name }));
-};
+	return data.map(({ name }: { name: string }): Params => ({ component: name }));
+}
 
-type Params = { component: string; }
+type Params = { component: string };

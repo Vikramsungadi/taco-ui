@@ -8,10 +8,7 @@ type Props = {
 };
 const Breadcrumbs = (props: Props) => {
 	return (
-		<ul
-			className={`flex items-center gap-3 text-zinc-900 dark:text-zinc-50 ${
-				props.className ?? ""
-			}`}>
+		<ul className={`flex items-center gap-3 text-zinc-900 dark:text-zinc-50 ${props.className ?? ""}`}>
 			<li>
 				<Link href='/' className='inline-flex items-center gap-2'>
 					<span>
