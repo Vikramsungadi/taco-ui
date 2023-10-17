@@ -4,11 +4,10 @@ import SyntaxHighlight from "@/components/SyntaxHighlight/index";
 import Frame, { AlignmentProps } from "@/components/code/code-editor/Frame";
 import { CodeDisplayProps, languages } from "@/types/types";
 import cn from "@/utils/cn";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 import ActionBar from "./ActionBar";
-import { useTheme } from "next-themes";
 
 type ClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 interface Props extends Record<CodeDisplayProps, string> {
@@ -23,13 +22,7 @@ const CodeComponent = (props: Props) => {
 		desktop: true,
 	});
 
-	let { theme } = useTheme();
-	let isDark = theme === "dark";
-	let [dark, setDark] = useState(isDark);
-
-	useLayoutEffect(() => {
-		setDark(isDark);
-	}, [theme, isDark]);
+	let [dark, setDark] = useState(true);
 
 	let [show, setShow] = useState({ code: false, preview: true });
 	let [copied, setCopied] = useState(false);
